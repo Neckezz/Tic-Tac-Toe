@@ -43,6 +43,8 @@ namespace Tic_Tac_Toe
             this.button11 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -219,12 +221,37 @@ namespace Tic_Tac_Toe
             this.label3.TabIndex = 30;
             this.label3.Text = "CurrentTurn:";
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button12.Location = new System.Drawing.Point(12, 363);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(109, 37);
+            this.button12.TabIndex = 31;
+            this.button12.Text = "Undo(Select Button)";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(8, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 20);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "DEACTIVATED";
+            // 
             // formPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -262,5 +289,7 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -14,7 +14,8 @@ namespace Tic_Tac_Toe
     {
         List<Button> buttons;
         //lista koja se sastoji iz 9 dugmica
-        int Player1Wins = 0, Player2Wins = 0; //brojaci pobeda
+        int Player1Wins = 0, Player2Wins = 0;//brojaci pobeda
+        bool WasClicked = false;
         Boolean checker;//checker koji provera ko je na potezu
         public formPopup()
         {
@@ -51,26 +52,51 @@ namespace Tic_Tac_Toe
             }
         }
 
+        
         private void whenClicked(object sender, EventArgs e) //vazi za 9 dugmica
         {
-            var button = (Button)sender; // varijabla button prosledjuje listi Button
+            var button = (Button)sender;
             if (checker == false) //prvi igrac
             {
                 button.Text = "X";
                 button.BackColor = Color.Red;
                 checker = true;
+                if (WasClicked == true)
+                {
+                    label4.Text = "Deactivated";
+                    Button btn = (Button)sender;
+                    btn.Text = "?";
+                    btn.ForeColor = Color.White;
+                    btn.BackColor = Color.DimGray;
+                    WasClicked = false;
+                }
             }
             else//drugi igrac
             {
                 button.Text = "O";
                 button.BackColor = Color.Blue;
                 checker = false;
+                if (WasClicked == true)
+                {
+                    label4.Text = "Deactivated";
+                    Button btn = (Button)sender;
+                    btn.Text = "?";
+                    btn.ForeColor = Color.White;
+                    btn.BackColor = Color.DimGray;
+                    WasClicked = false;
+                }
             }
             if (checker == false) //ispis na ekranu ko je trenutno na potezu
                 label3.Text = "CurrentTurn:X";
             else
                 label3.Text = "CurrentTurn:O";
             WinEvent();
+        }
+
+        private void button12_Click(object sender, EventArgs e) //undo dugme
+        {
+            label4.Text = "Activated";
+            WasClicked = true;
         }
 
         private void WinEvent() //metoda kojom proveravamo ko je pobedio i povecava score
